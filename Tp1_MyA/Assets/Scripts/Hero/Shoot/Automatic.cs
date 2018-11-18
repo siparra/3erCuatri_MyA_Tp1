@@ -10,13 +10,15 @@ public class Automatic : IShootStrategy
     private GameObject _bullet;
     private Transform _mainGun;
     private float _contador;
+    public NormalBulletGenerator _bulletPool;
 
-    public Automatic(bool pcanShot, float pfireRate, GameObject pBullet, Transform pMainGun)
+    public Automatic(bool pcanShot, float pfireRate, GameObject pBullet, Transform pMainGun, NormalBulletGenerator pBulletPool)
     {
         _canShot = pcanShot;
         _fireRate = pfireRate;
         _bullet = pBullet;
         _mainGun = pMainGun;
+        _bulletPool = pBulletPool;
     }
 
 
@@ -26,7 +28,8 @@ public class Automatic : IShootStrategy
 
         if (_canShot)
         {
-            Instantiate(_bullet, _mainGun.position, Quaternion.identity);
+            //Instantiate(_bullet, _mainGun.position, Quaternion.identity);
+            _bulletPool.GetBullet(_mainGun);
             _canShot = false;
         }
             if(_contador > _fireRate)

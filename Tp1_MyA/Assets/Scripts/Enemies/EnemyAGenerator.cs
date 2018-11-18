@@ -27,7 +27,6 @@ public class EnemyAGenerator : MonoBehaviour
     //Factory de Enemies
     private EnemyA EnemyFactory()
     {
-        var index = Random.Range(0, 1);
         return Instantiate<EnemyA>(prefab);
     }
 

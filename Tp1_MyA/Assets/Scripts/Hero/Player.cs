@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     public Transform sideGunR;
     public ModelPlayer model;
 
+    public NormalBulletGenerator bulletPool;
+
     public IShootStrategy automaticStrategy;
     public IShootStrategy tripleStrategy;
 
@@ -20,15 +22,18 @@ public class Player : MonoBehaviour
 
     public void Awake()
     {
+
+        bulletPool = GetComponent<NormalBulletGenerator>();
+
         model = new ModelPlayer(this.transform);
-        controller = new ControllerPlayer(model, view, bullet, this);
-        automaticStrategy = new Automatic(canShot, fireRate, bullet, mainGun);
+        controller = new ControllerPlayer(model, view, this);
+        automaticStrategy = new Automatic(canShot, fireRate, bullet, mainGun, bulletPool);
         tripleStrategy = new Triple(canShot, fireRate, bullet, mainGun, sideGunL, sideGunR);
     }
 
     void Start ()
     {
-        model.typeOfShoot = TypeOfShoot.TRIPLE;
+        model.typeOfShoot = TypeOfShoot.AUTOMATIC;
     }
 	
 

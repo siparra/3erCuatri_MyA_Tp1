@@ -9,13 +9,10 @@ public class ControllerPlayer : IController {
     Player _player;
     private float _speed = 5f;
 
-    private GameObject _bullet;
-
-    public ControllerPlayer(ModelPlayer pModel, ViewPlayer pView, GameObject pBullet, Player pPlayer)
+    public ControllerPlayer(ModelPlayer pModel, ViewPlayer pView, Player pPlayer)
     {
         _model = pModel;
         _view = pView;
-        _bullet = pBullet;
         _player = pPlayer;
         _model.Shoot += _player.ShootByType;
     }

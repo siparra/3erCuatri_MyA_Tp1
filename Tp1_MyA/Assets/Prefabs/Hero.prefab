@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4120933113962426}
   - component: {fileID: 212456627886932362}
   - component: {fileID: 114145785358701794}
+  - component: {fileID: 114445759050546766}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -43,7 +44,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1813613111460280
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,7 +60,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1974442072587042
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,10 +147,24 @@ MonoBehaviour:
   mainGun: {fileID: 4705428888142150}
   sideGunL: {fileID: 4113946008279174}
   sideGunR: {fileID: 4093697546763210}
+  bulletPool: {fileID: 0}
   automaticStrategy: {fileID: 0}
   tripleStrategy: {fileID: 0}
   canShot: 1
   fireRate: 0.05
+--- !u!114 &114445759050546766
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1021785089852650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a995bc2ec5afc0e4ea108899b08b3521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 10
+  prefab: {fileID: 114049199958932058, guid: bc6696488ae282e49bc731fc6878474e, type: 2}
 --- !u!212 &212122115646171706
 SpriteRenderer:
   m_ObjectHideFlags: 1
