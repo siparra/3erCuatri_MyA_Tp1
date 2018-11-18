@@ -8,42 +8,52 @@ public class EnemyA : MonoBehaviour, IEnemy {
     private float _speed;
     public IBullet _bullet;
 
+    //Movement Strategy
+    private IMovement _currentMovement;
+    private IMovement strategyMovement_Normal;
+    private IMovement strategyMovement_Sinuous;
+    private IMovement strategyMovement_Target;
 
     // Use this for initialization
-    void Start () {
-		
+    void Awake () {
+        
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+        Mover();
 	}
 
-    public void Attack()
+    public void Shoot()
     {
         throw new System.NotImplementedException();
     }
 
     public void Mover()
     {
-        throw new System.NotImplementedException();
+        if (_currentMovement != null)
+        {
+            _currentMovement.Advance();
+        }
     }
 
-    public void SetBulletType(IBullet bullet)
+    public IEnemy SetBulletType(IBullet bullet)
     {
-        throw new System.NotImplementedException();
+        _bullet = bullet;
+        return this;
     }
 
-    public void SetLife(int life)
+    public IEnemy SetLife(int life)
     {
-        throw new System.NotImplementedException();
+        _life = life;
+        return this;
     }
 
-    public void SetSpeed(float speed)
+    public IEnemy SetSpeed(float speed)
     {
-        throw new System.NotImplementedException();
+        _speed = speed;
+        return this;
     }
-
     //Para el POOL
      public void Dispose()
     {
@@ -52,7 +62,14 @@ public class EnemyA : MonoBehaviour, IEnemy {
 
     public void Initialize()
     {
-        //throw new System.NotImplementedException();
+        _life = 100;
+        _speed = 0.01f;
+        //bullet
+
+        strategyMovement_Normal = new NormalAdvance(_speed, this.transform);
+        strategyMovement_Sinuous = new SinuousAdvance(_speed,10f, this.transform);
+        //Strategy3
+        _currentMovement = strategyMovement_Sinuous;
     }
 
     public static void InitializeEnemy(EnemyA enemy)
@@ -65,4 +82,5 @@ public class EnemyA : MonoBehaviour, IEnemy {
         enemy.Dispose();
         enemy.gameObject.SetActive(false);
     }
+
 }

@@ -11,10 +11,10 @@ public interface IEnemy
     void Dispose();
 
     //Para el Enemigo propio
-    void Attack();
+    void Shoot();
     void Mover();
-    void SetLife(int life);
-    void SetSpeed(float speed);
-    void SetBulletType(IBullet bullet);
+    IEnemy SetLife(int life);
+    IEnemy SetSpeed(float speed);
+    IEnemy SetBulletType(IBullet bullet);
     
 }
