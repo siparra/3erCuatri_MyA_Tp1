@@ -15,6 +15,6 @@ public interface IEnemy
     void Mover();
     IEnemy SetLife(int life);
     IEnemy SetSpeed(float speed);
-    IEnemy SetBulletType(IBullet bullet);
+    IEnemy SetBulletType(IEnemyBullet bullet);
     
 }

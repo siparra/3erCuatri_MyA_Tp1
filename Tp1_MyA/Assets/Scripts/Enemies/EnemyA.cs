@@ -6,27 +6,49 @@ public class EnemyA : MonoBehaviour, IEnemy {
 
     private int _life;
     private float _speed;
-    public IBullet _bullet;
-
+    
     //Movement Strategy
     private IMovement _currentMovement;
     private IMovement strategyMovement_Normal;
     private IMovement strategyMovement_Sinuous;
     private IMovement strategyMovement_Target;
 
+    //Bullets
+    private IBulletMovement _currentBulletMovement;
+    private IBulletMovement _strategyBulletMovement_Normal;
+    private IBulletMovement _strategyBulletMovement_Circular;
+
+    private IEnemyBullet _bullet;
+    private EnemyBulletGenerator _bulletPool;
+    private float canShoot;
+    public Transform gun;
+
     // Use this for initialization
     void Awake () {
-        
+        canShoot = 1f;
+        _bulletPool = GetComponent<EnemyBulletGenerator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
         Mover();
+        if (canShoot < 0)
+        {
+            Shoot();
+            canShoot = 1f;
+        }
+        canShoot -= Time.deltaTime;
+        
 	}
 
     public void Shoot()
     {
-        throw new System.NotImplementedException();
+        if(_currentBulletMovement != null)
+        {
+            Debug.Log("Instancio la bala");
+            _bulletPool.GetBullet(gun, _currentBulletMovement);
+        }
+        
     }
 
     public void Mover()
@@ -37,7 +59,7 @@ public class EnemyA : MonoBehaviour, IEnemy {
         }
     }
 
-    public IEnemy SetBulletType(IBullet bullet)
+    public IEnemy SetBulletType(IEnemyBullet bullet)
     {
         _bullet = bullet;
         return this;
@@ -64,12 +86,19 @@ public class EnemyA : MonoBehaviour, IEnemy {
     {
         _life = 100;
         _speed = 0.01f;
-        //bullet
-
+        //Movement
         strategyMovement_Normal = new NormalAdvance(_speed, this.transform);
         strategyMovement_Sinuous = new SinuousAdvance(_speed,10f, this.transform);
         //Strategy3
         _currentMovement = strategyMovement_Sinuous;
+
+        //BulletMovement
+        _strategyBulletMovement_Normal = new NormalMovement();
+        _strategyBulletMovement_Circular = new CircularMovement();
+
+        _currentBulletMovement = _strategyBulletMovement_Normal;
+
+
     }
 
     public static void InitializeEnemy(EnemyA enemy)

@@ -6,6 +6,7 @@ TextureImporter:
     21300002: HeroBullet
     21300004: SideGun
     21300006: Enemy1
+    21300008: EnemyBullet
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -156,13 +157,33 @@ TextureImporter:
         width: 60
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: a8b9d371a48aebf47880a0f9628ac182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyBullet
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 670
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0166399a23322d04db45b9d098f40a95
       vertices: []
       indices: 
       edges: []
