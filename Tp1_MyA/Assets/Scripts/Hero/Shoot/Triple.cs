@@ -13,7 +13,9 @@ public class Triple : IShootStrategy
     private Transform _sideGunR;
     private float _contador;
 
-    public Triple(bool pcanShot, float pfireRate, GameObject pBullet, Transform pMainGun, Transform pSideGunL, Transform pSideGunR)
+    public NormalBulletGenerator _bulletPool;
+
+    public Triple(bool pcanShot, float pfireRate, GameObject pBullet, Transform pMainGun, Transform pSideGunL, Transform pSideGunR, NormalBulletGenerator pBulletPool)
     {
         _canShot = pcanShot;
         _fireRate = pfireRate;
@@ -21,6 +23,7 @@ public class Triple : IShootStrategy
         _mainGun = pMainGun;
         _sideGunL = pSideGunL;
         _sideGunR = pSideGunR;
+        _bulletPool = pBulletPool;
     }
 
 
@@ -30,9 +33,9 @@ public class Triple : IShootStrategy
 
         if (_canShot)
         {
-            Instantiate(_bullet, _mainGun.position, Quaternion.identity);
-            Instantiate(_bullet, _sideGunL.position, Quaternion.identity);
-            Instantiate(_bullet, _sideGunR.position, Quaternion.identity);
+            _bulletPool.GetBullet(_mainGun);
+            _bulletPool.GetBullet(_sideGunL);
+            _bulletPool.GetBullet(_sideGunR);
             _canShot = false;
         }
         if (_contador > _fireRate)

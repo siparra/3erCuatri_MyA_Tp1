@@ -25,10 +25,11 @@ public class Player : MonoBehaviour
 
         bulletPool = GetComponent<NormalBulletGenerator>();
 
+        view = new ViewPlayer();
         model = new ModelPlayer(this.transform);
         controller = new ControllerPlayer(model, view, this);
         automaticStrategy = new Automatic(canShot, fireRate, bullet, mainGun, bulletPool);
-        tripleStrategy = new Triple(canShot, fireRate, bullet, mainGun, sideGunL, sideGunR);
+        tripleStrategy = new Triple(canShot, fireRate, bullet, mainGun, sideGunL, sideGunR, bulletPool);
     }
 
     void Start ()

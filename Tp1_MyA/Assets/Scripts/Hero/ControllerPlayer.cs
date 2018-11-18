@@ -45,6 +45,19 @@ public class ControllerPlayer : IController {
         {
             _model.OnMove(new Vector3(0, 1 * _speed * -1, 0));
         }
+
+        if (Input.GetKeyDown(KeyCode.Mouse2))
+        {
+            if(_model.typeOfShoot == TypeOfShoot.TRIPLE)
+            {
+                _view.DeActivateGuns(_player.sideGunL.gameObject, _player.sideGunR.gameObject);
+                _model.typeOfShoot = TypeOfShoot.AUTOMATIC;
+            }else if(_model.typeOfShoot == TypeOfShoot.AUTOMATIC)
+            {
+               _view.ActivateGuns(_player.sideGunL.gameObject, _player.sideGunR.gameObject);
+                _model.typeOfShoot = TypeOfShoot.TRIPLE;
+            }
+        }
     }
     public void Shoot()
     {
