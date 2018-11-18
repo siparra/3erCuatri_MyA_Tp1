@@ -4,6 +4,7 @@ TextureImporter:
   fileIDToRecycleName:
     21300000: Hero
     21300002: HeroBullet
+    21300004: SideGun
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -114,13 +115,33 @@ TextureImporter:
         width: 3
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: c020bd423a65c7744ba19aa1e368f049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideGun
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 341
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 331445def25bbd94b89d02f7376a4f44
       vertices: []
       indices: 
       edges: []

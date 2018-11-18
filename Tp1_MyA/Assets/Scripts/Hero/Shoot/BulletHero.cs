@@ -6,20 +6,26 @@ public class BulletHero : MonoBehaviour
 {
     public float speed;
 
-    void Start ()
+    void Start()
     {
-		
-	}
-	
+        StartCoroutine(DestroyBullet());
+    }
 
-	void Update ()
+
+    void Update()
     {
         Move();
-	}
+    }
 
     public void Move()
     {
         var direction = transform.up;
         transform.position += direction * speed * Time.deltaTime;
+    }
+
+    IEnumerator DestroyBullet()
+    {
+        yield return new WaitForSeconds(3f);
+        Destroy(this.gameObject);
     }
 }
