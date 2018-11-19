@@ -31,5 +31,6 @@ public class ModelPlayer
     public enum TypeOfShoot
     {
         AUTOMATIC,
-        TRIPLE
+        TRIPLE,
+        MISIL
     }

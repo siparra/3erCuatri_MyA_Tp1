@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08325fe8f4f8b8d44aad40d6456c43d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 5
+  amount: 1
   prefab: {fileID: 114989831682730860, guid: 50ce192756595a94986055d74ce909c7, type: 2}
 --- !u!4 &335844342
 Transform:
@@ -298,6 +298,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &788462682 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4875759174119250, guid: 4e7f9b23b7a820d46991b744283a25de,
+    type: 2}
+  m_PrefabInternal: {fileID: 1290255826}
 --- !u!1001 &1290255826
 Prefab:
   m_ObjectHideFlags: 0
@@ -311,7 +316,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4120933113962426, guid: 4e7f9b23b7a820d46991b744283a25de, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.225
       objectReference: {fileID: 0}
     - target: {fileID: 4120933113962426, guid: 4e7f9b23b7a820d46991b744283a25de, type: 2}
       propertyPath: m_LocalPosition.z
@@ -337,6 +342,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114145785358701794, guid: 4e7f9b23b7a820d46991b744283a25de,
+        type: 2}
+      propertyPath: misilGunL
+      value: 
+      objectReference: {fileID: 788462682}
+    - target: {fileID: 114145785358701794, guid: 4e7f9b23b7a820d46991b744283a25de,
+        type: 2}
+      propertyPath: misilGunR
+      value: 
+      objectReference: {fileID: 1598079137}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e7f9b23b7a820d46991b744283a25de, type: 2}
   m_IsPrefabAsset: 0
+--- !u!4 &1598079137 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4682194692660168, guid: 4e7f9b23b7a820d46991b744283a25de,
+    type: 2}
+  m_PrefabInternal: {fileID: 1290255826}

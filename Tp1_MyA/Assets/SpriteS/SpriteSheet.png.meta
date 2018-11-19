@@ -11,6 +11,7 @@ TextureImporter:
     21300012: Small_Exp_2
     21300014: Small_Exp_3
     21300016: Small_Exp_4
+    21300018: Misil
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -261,13 +262,33 @@ TextureImporter:
         width: 18
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 752048de5c2d12047b425bc5df2e477f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Misil
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 544
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b978fcb2141bd849b7dcc273d877d46
       vertices: []
       indices: 
       edges: []
