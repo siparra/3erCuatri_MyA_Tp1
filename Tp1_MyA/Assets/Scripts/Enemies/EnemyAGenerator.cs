@@ -20,7 +20,8 @@ public class EnemyAGenerator : MonoBehaviour
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            _enemyPool.GetObjectFromPool();
+            var enemy =_enemyPool.GetObjectFromPool();
+            enemy.SetEnemyPool(this);
         }
     }
 

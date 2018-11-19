@@ -18,6 +18,8 @@ public class EnemyA : MonoBehaviour, IEnemy {
     private float canShoot;
     public Transform gun;
 
+    private EnemyAGenerator _enemyPool;
+
     // Use this for initialization
     void Awake () {
         canShoot = 1f;
@@ -96,5 +98,17 @@ public class EnemyA : MonoBehaviour, IEnemy {
         enemy.Dispose();
         enemy.gameObject.SetActive(false);
     }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        print("colision del enemy");
+        _enemyPool.ReturnEnemyToPool(this);
+    }
+
+    public void SetEnemyPool(EnemyAGenerator pEnemyPool)
+    {
+        _enemyPool = pEnemyPool;
+    }
+
 
 }
