@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4940199234497368}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BulletGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4419734855393116}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 114916294181296578}
   - component: {fileID: 50387684478444190}
   - component: {fileID: 61574085300170212}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnemyA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 4940199234497368}
-  enemyPool: {fileID: 0}
 --- !u!212 &212166994770254536
 SpriteRenderer:
   m_ObjectHideFlags: 1

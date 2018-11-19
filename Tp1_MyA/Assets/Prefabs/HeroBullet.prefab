@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212786083933800838}
   - component: {fileID: 114049199958932058}
   - component: {fileID: 70883811045195896}
-  m_Layer: 1
+  m_Layer: 12
   m_Name: HeroBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

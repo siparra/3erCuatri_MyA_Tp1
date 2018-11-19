@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114087892370826432}
   - component: {fileID: 50019660731500050}
   - component: {fileID: 60509882810303518}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4875759174119250}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MisilGunL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4682194692660168}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MisilGunR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4093697546763210}
   - component: {fileID: 212887527693822038}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SideGunR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4325722905829560}
   - component: {fileID: 212836982236346968}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MisilGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4113946008279174}
   - component: {fileID: 212122115646171706}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SideGunL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4025019476606930}
   - component: {fileID: 212648391515926894}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MisilGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4705428888142150}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: AmetralladoraCentral
   m_TagString: Untagged
   m_Icon: {fileID: 0}
