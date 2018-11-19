@@ -19,4 +19,20 @@ public class ViewPlayer : MonoBehaviour
         sideGunL.SetActive(false);
         sideGunR.SetActive(false);
     }
+
+    public void ActivateMisilGuns(GameObject pMisilGunL, GameObject pMisilGunR)
+    {
+        var sideGunL = pMisilGunL;
+        var sideGunR = pMisilGunR;
+        sideGunL.SetActive(true);
+        sideGunR.SetActive(true);
+    }
+
+    public void DeActivateMisilGuns(GameObject pMisilGunL, GameObject pMisilGunR)
+    {
+        var sideGunL = pMisilGunL;
+        var sideGunR = pMisilGunR;
+        sideGunL.SetActive(false);
+        sideGunR.SetActive(false);
+    }
 }

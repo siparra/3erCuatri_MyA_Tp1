@@ -298,11 +298,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &788462682 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4875759174119250, guid: 4e7f9b23b7a820d46991b744283a25de,
-    type: 2}
-  m_PrefabInternal: {fileID: 1290255826}
 --- !u!1001 &1290255826
 Prefab:
   m_ObjectHideFlags: 0
@@ -342,21 +337,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114145785358701794, guid: 4e7f9b23b7a820d46991b744283a25de,
-        type: 2}
-      propertyPath: misilGunL
-      value: 
-      objectReference: {fileID: 788462682}
-    - target: {fileID: 114145785358701794, guid: 4e7f9b23b7a820d46991b744283a25de,
-        type: 2}
-      propertyPath: misilGunR
-      value: 
-      objectReference: {fileID: 1598079137}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e7f9b23b7a820d46991b744283a25de, type: 2}
   m_IsPrefabAsset: 0
---- !u!4 &1598079137 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4682194692660168, guid: 4e7f9b23b7a820d46991b744283a25de,
-    type: 2}
-  m_PrefabInternal: {fileID: 1290255826}

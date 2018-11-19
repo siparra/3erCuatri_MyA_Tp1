@@ -51,14 +51,17 @@ public class ControllerPlayer : IController {
             if(_model.typeOfShoot == TypeOfShoot.TRIPLE)
             {
                 _view.ActivateGuns(_player.sideGunL.gameObject, _player.sideGunR.gameObject);
+                _view.ActivateMisilGuns(_player.misilGunL.gameObject, _player.misilGunR.gameObject);
                 _model.typeOfShoot = TypeOfShoot.MISIL;
             }else if(_model.typeOfShoot == TypeOfShoot.AUTOMATIC)
             {
-               _view.ActivateGuns(_player.sideGunL.gameObject, _player.sideGunR.gameObject);
+                _view.ActivateGuns(_player.sideGunL.gameObject, _player.sideGunR.gameObject);
+                _view.DeActivateMisilGuns(_player.misilGunL.gameObject, _player.misilGunR.gameObject);
                 _model.typeOfShoot = TypeOfShoot.TRIPLE;
             }else if(_model.typeOfShoot == TypeOfShoot.MISIL)
             {
                 _view.DeActivateGuns(_player.sideGunL.gameObject, _player.sideGunR.gameObject);
+                _view.DeActivateMisilGuns(_player.misilGunL.gameObject, _player.misilGunR.gameObject);
                 _model.typeOfShoot = TypeOfShoot.AUTOMATIC;
             }
         }
