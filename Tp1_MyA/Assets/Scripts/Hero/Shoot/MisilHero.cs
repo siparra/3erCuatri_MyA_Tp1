@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletHero : MonoBehaviour
-{
+public class MisilHero : MonoBehaviour {
+
     public float speed;
-    private NormalBulletGenerator _bulletPool;
+    private MisilBulletGenerator _bulletPool;
 
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -28,30 +27,30 @@ public class BulletHero : MonoBehaviour
     {
         StartCoroutine(DestroyBullet(this));
     }
-    
+
     private void Dispose()
     {
-       // throw new NotImplementedException();
+        // throw new NotImplementedException();
     }
 
-    public static void InitializeBullet(BulletHero bullet)
+    public static void InitializeBullet(MisilHero bullet)
     {
         bullet.gameObject.SetActive(true);
         bullet.Initialize();
     }
 
-    public static void DisposeBullet(BulletHero bullet)
+    public static void DisposeBullet(MisilHero bullet)
     {
         bullet.Dispose();
         bullet.gameObject.SetActive(false);
     }
 
-    public void SetBulletPool(NormalBulletGenerator bulletPool)
+    public void SetBulletPool(MisilBulletGenerator bulletPool)
     {
         _bulletPool = bulletPool;
     }
 
-    IEnumerator DestroyBullet(BulletHero bullet)
+    IEnumerator DestroyBullet(MisilHero bullet)
     {
         yield return new WaitForSeconds(3f);
         _bulletPool.ReturnBulletToPool(bullet);
