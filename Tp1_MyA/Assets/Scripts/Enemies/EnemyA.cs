@@ -38,7 +38,7 @@ public class EnemyA : MonoBehaviour, IEnemy {
 
     public void Shoot()
     { 
-       _bulletPool.GetBullet(gun, 1);   //1 = Normal Bulltet Movement (CAMBIAR!)
+       _bulletPool.GetBullet(gun, 2);   //1 = Normal Bulltet Movement (CAMBIAR!)
     }
 
     public void Mover()
@@ -75,7 +75,9 @@ public class EnemyA : MonoBehaviour, IEnemy {
     public void Initialize()
     {
         _life = 100;
-        _speed = 0.01f;
+        //_speed = 0.01f; //CAMBIAR a 0.01f cuando es Movimiento Sinuoso
+        _speed = 1f;
+        
         //Movement
         strategyMovement_Normal = new NormalAdvance(_speed, this.transform);
         strategyMovement_Sinuous = new SinuousAdvance(_speed,10f, this.transform);

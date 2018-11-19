@@ -9,9 +9,8 @@ public class NormalMovement : MonoBehaviour, IBulletMovement {
 
     public void Move()
     {
-        var direction = _transform.up;
+        var direction = _transform.up;        
         _transform.position -= direction * _speed * Time.deltaTime;
-        Debug.Log("Se Esta moviendo!: "+_transform.gameObject.name);
     }
 
     public void SetBulletSpeed(float speed)

@@ -35,6 +35,8 @@ public class EnemyBulletGenerator : MonoBehaviour {
                 bullet.SetBulletMovement(_strategyBulletMovement_Normal);
                 break;
             case 2:
+                _strategyBulletMovement_Circular = new CircularMovement();
+                bullet.SetBulletMovement(_strategyBulletMovement_Circular);
                 break;
         }
         bullet.SetBulletPool(this);

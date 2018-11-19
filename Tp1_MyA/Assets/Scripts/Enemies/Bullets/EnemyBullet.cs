@@ -11,7 +11,6 @@ public class EnemyBullet : MonoBehaviour,IEnemyBullet {
     void Update()
     {
         Move();
-        Debug.Log("Bullet: "+this.gameObject.name);
     }
 
     public void Move()
@@ -56,8 +55,7 @@ public class EnemyBullet : MonoBehaviour,IEnemyBullet {
 
     IEnumerator DestroyBullet(EnemyBullet bullet)
     {
-        yield return new WaitForSeconds(3f);
-        // BulletHero.DisposeBullet(bullet);
+        yield return new WaitForSeconds(6f);
         _bulletPool.ReturnBulletToPool(bullet);
     }
 
