@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Triple : IShootStrategy
+public class Misil : IShootStrategy
 {
 
     private bool _canShot;
@@ -11,11 +11,15 @@ public class Triple : IShootStrategy
     private Transform _mainGun;
     private Transform _sideGunL;
     private Transform _sideGunR;
+    private Transform _misilGunR;
+    private Transform _misilGunL;
     private float _contador;
 
     public NormalBulletGenerator _bulletPool;
+    public MisilBulletGenerator _misilPool;
 
-    public Triple(bool pcanShot, float pfireRate, GameObject pBullet, Transform pMainGun, Transform pSideGunL, Transform pSideGunR, NormalBulletGenerator pBulletPool)
+    public Misil(bool pcanShot, float pfireRate, GameObject pBullet, Transform pMainGun, Transform pSideGunL, Transform pSideGunR, 
+        NormalBulletGenerator pBulletPool, Transform pMisilGunL, Transform pMisilGunR, MisilBulletGenerator pMisilPool)
     {
         _canShot = pcanShot;
         _fireRate = pfireRate;
@@ -24,6 +28,9 @@ public class Triple : IShootStrategy
         _sideGunL = pSideGunL;
         _sideGunR = pSideGunR;
         _bulletPool = pBulletPool;
+        _misilGunL = pMisilGunL;
+        _misilGunR = pMisilGunR;
+        _misilPool = pMisilPool;
     }
 
 
@@ -36,6 +43,8 @@ public class Triple : IShootStrategy
             _bulletPool.GetBullet(_mainGun);
             _bulletPool.GetBullet(_sideGunL);
             _bulletPool.GetBullet(_sideGunR);
+            _misilPool.GetBullet(_misilGunL);
+            _misilPool.GetBullet(_misilGunR);
             _canShot = false;
         }
         if (_contador > _fireRate)

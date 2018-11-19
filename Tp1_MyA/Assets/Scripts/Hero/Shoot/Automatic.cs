@@ -28,7 +28,6 @@ public class Automatic : IShootStrategy
 
         if (_canShot)
         {
-            //Instantiate(_bullet, _mainGun.position, Quaternion.identity);
             _bulletPool.GetBullet(_mainGun);
             _canShot = false;
         }

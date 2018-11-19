@@ -10,12 +10,16 @@ public class Player : MonoBehaviour
     public Transform mainGun;
     public Transform sideGunL;
     public Transform sideGunR;
+    public Transform misilGunL;
+    public Transform misilGunR;
     public ModelPlayer model;
 
     public NormalBulletGenerator bulletPool;
+    public MisilBulletGenerator misilPool;
 
     public IShootStrategy automaticStrategy;
     public IShootStrategy tripleStrategy;
+    public IShootStrategy misilStrategy;
 
     public bool canShot;
     public float fireRate;
@@ -24,11 +28,14 @@ public class Player : MonoBehaviour
     {
 
         bulletPool = GetComponent<NormalBulletGenerator>();
+        misilPool = GetComponent<MisilBulletGenerator>();
 
+        view = new ViewPlayer();
         model = new ModelPlayer(this.transform);
         controller = new ControllerPlayer(model, view, this);
         automaticStrategy = new Automatic(canShot, fireRate, bullet, mainGun, bulletPool);
-        tripleStrategy = new Triple(canShot, fireRate, bullet, mainGun, sideGunL, sideGunR);
+        tripleStrategy = new Triple(canShot, fireRate, bullet, mainGun, sideGunL, sideGunR, bulletPool);
+        misilStrategy = new Misil(canShot, fireRate, bullet, mainGun, sideGunL, sideGunR, bulletPool, misilGunL, misilGunR, misilPool);
     }
 
     void Start ()
@@ -51,6 +58,9 @@ public class Player : MonoBehaviour
                 break;
             case TypeOfShoot.TRIPLE:
                 tripleStrategy.Shoot();
+                break;
+            case TypeOfShoot.MISIL:
+                misilStrategy.Shoot();
                 break;
             default:
                 break;
