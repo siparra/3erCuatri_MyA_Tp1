@@ -11,9 +11,7 @@ public class NormalMovement : MonoBehaviour, IBulletMovement {
     {
         var direction = _transform.up;
         _transform.position -= direction * _speed * Time.deltaTime;
-        Debug.Log("Transform de Bullet Y: " + _transform.position.y);
-        Debug.Log("Speed: " + _speed);
-
+        Debug.Log("Se Esta moviendo!: "+_transform.gameObject.name);
     }
 
     public void SetBulletSpeed(float speed)

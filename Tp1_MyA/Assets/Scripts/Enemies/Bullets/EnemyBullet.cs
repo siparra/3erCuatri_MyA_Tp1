@@ -5,12 +5,13 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour,IEnemyBullet {
 
     public float speed;
-    private EnemyBulletGenerator _bulletPool;
-    private IBulletMovement _currentBulletMovement;
+    public EnemyBulletGenerator _bulletPool;
+    public IBulletMovement _currentBulletMovement;
 
     void Update()
     {
         Move();
+        Debug.Log("Bullet: "+this.gameObject.name);
     }
 
     public void Move()

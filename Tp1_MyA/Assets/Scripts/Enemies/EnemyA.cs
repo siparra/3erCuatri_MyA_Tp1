@@ -13,11 +13,6 @@ public class EnemyA : MonoBehaviour, IEnemy {
     private IMovement strategyMovement_Sinuous;
     private IMovement strategyMovement_Target;
 
-    //Bullets
-    private IBulletMovement _currentBulletMovement;
-    private IBulletMovement _strategyBulletMovement_Normal;
-    private IBulletMovement _strategyBulletMovement_Circular;
-
     private IEnemyBullet _bullet;
     private EnemyBulletGenerator _bulletPool;
     private float canShoot;
@@ -37,18 +32,13 @@ public class EnemyA : MonoBehaviour, IEnemy {
             Shoot();
             canShoot = 1f;
         }
-        canShoot -= Time.deltaTime;
+       canShoot -= Time.deltaTime;
         
 	}
 
     public void Shoot()
-    {
-        if(_currentBulletMovement != null)
-        {
-            Debug.Log("Instancio la bala");
-            _bulletPool.GetBullet(gun, _currentBulletMovement);
-        }
-        
+    { 
+       _bulletPool.GetBullet(gun, 1);   //1 = Normal Bulltet Movement (CAMBIAR!)
     }
 
     public void Mover()
@@ -91,14 +81,7 @@ public class EnemyA : MonoBehaviour, IEnemy {
         strategyMovement_Sinuous = new SinuousAdvance(_speed,10f, this.transform);
         //Strategy3
         _currentMovement = strategyMovement_Sinuous;
-
-        //BulletMovement
-        _strategyBulletMovement_Normal = new NormalMovement();
-        _strategyBulletMovement_Circular = new CircularMovement();
-
-        _currentBulletMovement = _strategyBulletMovement_Normal;
-
-
+        
     }
 
     public static void InitializeEnemy(EnemyA enemy)
