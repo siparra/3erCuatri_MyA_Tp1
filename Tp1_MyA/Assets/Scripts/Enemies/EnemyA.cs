@@ -18,13 +18,15 @@ public class EnemyA : MonoBehaviour, IEnemy {
     private float canShoot;
     public Transform gun;
 
+    private Vector3 _startPosition = new Vector3(0,12.6f,0);
+
     private EnemyAGenerator _enemyPool;
 
     // Use this for initialization
     void Awake () {
         canShoot = 1f;
         _bulletPool = GetComponent<EnemyBulletGenerator>();
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -71,11 +73,14 @@ public class EnemyA : MonoBehaviour, IEnemy {
     //Para el POOL
      public void Dispose()
     {
-        //throw new System.NotImplementedException();
+        Debug.Log("Se ejecuto Dispose");
+        _life = 100;
+        this.transform.position = _startPosition;
     }
 
     public void Initialize()
     {
+        
         _life = 100;
         //_speed = 0.01f; //CAMBIAR a 0.01f cuando es Movimiento Sinuoso
         _speed = 1f;
@@ -110,5 +115,9 @@ public class EnemyA : MonoBehaviour, IEnemy {
         _enemyPool = pEnemyPool;
     }
 
+    public void SetStartPosition(Vector3 initialPosition)
+    {
+        _startPosition = initialPosition;
+    }
 
 }

@@ -22,12 +22,14 @@ public class EnemyAGenerator : MonoBehaviour
         {
             var enemy =_enemyPool.GetObjectFromPool();
             enemy.SetEnemyPool(this);
+            enemy.SetStartPosition(this.transform.position);
         }
     }
 
     //Factory de Enemies
     private EnemyA EnemyFactory()
     {
+        Debug.Log("EnemyGenratorTransform: "+this.transform.position);
         return Instantiate<EnemyA>(prefab, this.transform.position, this.transform.rotation);
     }
 
