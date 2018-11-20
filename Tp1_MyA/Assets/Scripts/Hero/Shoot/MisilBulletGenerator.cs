@@ -8,6 +8,9 @@ public class MisilBulletGenerator : MonoBehaviour
     public int amount;
     public MisilHero prefab;
     private Pool<MisilHero> _misiltPool;
+    public Vector3 heroPosition;
+    public GameObject smallExplotion;
+    public Transform heroTransform;
 
     private static MisilBulletGenerator _instance;
     public static MisilBulletGenerator Instance { get { return _instance; } }
@@ -23,16 +26,25 @@ public class MisilBulletGenerator : MonoBehaviour
         var bullet = _misiltPool.GetObjectFromPool();
         bullet.transform.position = Gun.position;
         bullet.transform.rotation = Gun.rotation;
+        bullet.particleEffect = smallExplotion;
+        heroPosition = GetComponent<Transform>().position;
+        bullet.transform.position = heroPosition;
+        bullet.heroTransform = heroTransform;
         bullet.SetBulletPool(this);
     }
 
     private MisilHero BulletFactory()
     {
-        return Instantiate<MisilHero>(prefab);
+        var bullet = Instantiate<MisilHero>(prefab);
+        bullet.heroTransform = heroTransform;
+        return bullet;
+
     }
 
     public void ReturnBulletToPool(MisilHero bullet)
     {
+        heroPosition = GetComponent<Transform>().position;
+        bullet.transform.position = heroPosition;
         _misiltPool.DisablePoolObject(bullet);
     }
 }

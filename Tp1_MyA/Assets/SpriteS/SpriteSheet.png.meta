@@ -17,6 +17,10 @@ TextureImporter:
     21300024: SpriteSheet_2
     21300026: MisilGun
     21300028: EnemyBullet2
+    21300030: Vacio
+    21300032: PowerUpGun
+    21300034: PowerUpShield
+    21300036: Shield
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -354,6 +358,86 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: f8b499ca46b9e7d4388548e25173e8cc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vacio
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 815
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 476f1dd48d795584880824d94b4834e1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PowerUpGun
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 355
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41f4464b3cd765247b99588cfd594d06
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PowerUpShield
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 331
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6b35b5713feff54e974e231b9233c02
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 335
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9c15ad4485a81a4a82f552a2307af56
       vertices: []
       indices: 
       edges: []

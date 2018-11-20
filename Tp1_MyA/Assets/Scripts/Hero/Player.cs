@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public Transform misilGunL;
     public Transform misilGunR;
     public ModelPlayer model;
+    public GameObject shield;
 
     public NormalBulletGenerator bulletPool;
     public MisilBulletGenerator misilPool;
@@ -23,6 +24,7 @@ public class Player : MonoBehaviour
 
     public bool canShot;
     public float fireRate;
+    public float contador;
 
     public void Awake()
     {
@@ -31,7 +33,7 @@ public class Player : MonoBehaviour
         misilPool = GetComponent<MisilBulletGenerator>();
 
         view = new ViewPlayer();
-        model = new ModelPlayer(this.transform);
+        model = new ModelPlayer(this.transform, shield);
         controller = new ControllerPlayer(model, view, this);
         automaticStrategy = new Automatic(canShot, fireRate, bullet, mainGun, bulletPool);
         tripleStrategy = new Triple(canShot, fireRate, bullet, mainGun, sideGunL, sideGunR, bulletPool);
@@ -41,13 +43,18 @@ public class Player : MonoBehaviour
     void Start ()
     {
         model.typeOfShoot = TypeOfShoot.AUTOMATIC;
+        contador = 0f;
     }
 	
 
 	void Update ()
     {
         controller.OnUpdate();
-	}
+
+        contador += Time.deltaTime;
+        if(contador > 15)
+            model.typeOfShoot = TypeOfShoot.AUTOMATIC;
+    }
 
     public void ShootByType(TypeOfShoot pTypeOfShot)
     {
@@ -70,8 +77,18 @@ public class Player : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision != null)
-            Debug.Log("Milagrosamente funciona");
+        if(collision.gameObject.tag == "PowerUpGun")
+        {
+            model.PowerUpGun();
+            contador = 0;
+        }else if(collision.gameObject.tag == "PowerUpShield")
+        {
+            model.PowerUpShield();
+        }else if(collision.gameObject.tag == "Enemy")
+        {
+            Debug.Log("Collision del Hero Contra un Enemy");
+        }
+
     }
 
     

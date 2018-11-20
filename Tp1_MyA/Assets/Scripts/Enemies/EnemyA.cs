@@ -73,7 +73,6 @@ public class EnemyA : MonoBehaviour, IEnemy {
     //Para el POOL
      public void Dispose()
     {
-        Debug.Log("Se ejecuto Dispose");
         _life = 100;
         this.transform.position = _startPosition;
     }
