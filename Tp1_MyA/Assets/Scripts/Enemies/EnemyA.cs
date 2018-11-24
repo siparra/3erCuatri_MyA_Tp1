@@ -105,7 +105,6 @@ public class EnemyA : MonoBehaviour, IEnemy {
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        print("colision del enemy");
         _enemyPool.ReturnEnemyToPool(this);
     }
 
