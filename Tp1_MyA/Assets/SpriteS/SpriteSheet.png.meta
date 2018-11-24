@@ -13,7 +13,7 @@ TextureImporter:
     21300016: Small_Exp_4
     21300018: Misil
     21300020: EnemyBullet
-    21300022: SpriteSheet_1
+    21300022: GunUp
     21300024: SpriteSheet_2
     21300026: MisilGun
     21300028: EnemyBullet2
@@ -21,6 +21,11 @@ TextureImporter:
     21300032: PowerUpGun
     21300034: PowerUpShield
     21300036: Shield
+    21300038: SpriteSheet_0
+    21300040: PowerUpBG
+    21300042: TripleIcon
+    21300044: Enemy2
+    21300046: Enemy3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -431,13 +436,133 @@ TextureImporter:
         width: 21
         height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: b9c15ad4485a81a4a82f552a2307af56
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 483
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e6c4881f720c9a4abd5109db6425807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GunUp
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 373
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23ae46cd37f12f24c96860f47557dcf8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PowerUpBG
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 183
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14bf6cec3009db342aa949583101a5ce
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TripleIcon
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 479
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1f1b673ddd81b9429a74c82328164a3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy2
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 413
+        width: 53
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4823a0ba4fe1f94499fd486bd7314ba
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy3
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 723
+        width: 53
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbd2550299af56f42a09322ff6c2b2b5
       vertices: []
       indices: 
       edges: []
