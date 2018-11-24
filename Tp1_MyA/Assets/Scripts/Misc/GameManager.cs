@@ -51,8 +51,7 @@ public class GameManager : MonoBehaviour, IObserver
                 break;
             case "StartCount":
                 uiManager.startIconCount = true;
-                break;
-                    
+                break;         
             default:
                 break;
         }
