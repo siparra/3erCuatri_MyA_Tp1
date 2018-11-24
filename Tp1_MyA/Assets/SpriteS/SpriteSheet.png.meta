@@ -24,6 +24,8 @@ TextureImporter:
     21300038: SpriteSheet_0
     21300040: PowerUpBG
     21300042: TripleIcon
+    21300044: Enemy2
+    21300046: Enemy3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -521,6 +523,46 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: d1f1b673ddd81b9429a74c82328164a3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy2
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 413
+        width: 53
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4823a0ba4fe1f94499fd486bd7314ba
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy3
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 723
+        width: 53
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbd2550299af56f42a09322ff6c2b2b5
       vertices: []
       indices: 
       edges: []
