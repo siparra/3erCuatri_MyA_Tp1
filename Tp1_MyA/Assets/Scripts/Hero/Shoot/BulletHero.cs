@@ -57,7 +57,7 @@ public class BulletHero : MonoBehaviour
         _bulletPool.ReturnBulletToPool(bullet);
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
         _bulletPool.ReturnBulletToPool(this);
     }

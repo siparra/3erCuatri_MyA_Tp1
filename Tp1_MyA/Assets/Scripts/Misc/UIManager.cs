@@ -7,15 +7,25 @@ public class UIManager
 {
     private Image _HealthBar;
     private Image _tripleIcon;
+    private Image _misilIcon;
+    public Image currentIcon;
+    private Image _shieldIcon;
 
     public bool startIconCount;
+    public bool startShieldIconCount;
     public float powerUpStartTime;
     public float powerUpRemainingTime;
+    public float shieldPowerUpRemainingTime;
+    public float shieldPowerUpStartTime;
 
-    public UIManager(Image pHealthBar, Image ptripleIcon)
+
+    public UIManager(Image pHealthBar, Image ptripleIcon, Image pMisilIcon, Image pShieldIcon)
     {
         _HealthBar = pHealthBar;
         _tripleIcon = ptripleIcon;
+        _misilIcon = pMisilIcon;
+        currentIcon = _misilIcon;
+        _shieldIcon = pShieldIcon;
     }
 		
 
@@ -25,8 +35,19 @@ public class UIManager
         {
             var contador = Time.deltaTime;
             powerUpRemainingTime -= contador;
-            UpdatePowerUpIcon(powerUpRemainingTime, powerUpStartTime);
+            UpdatePowerUpIcon(currentIcon, powerUpRemainingTime, powerUpStartTime);
             if(contador > 15)
+            {
+                startIconCount = false;
+            }
+        }
+
+        if (startShieldIconCount)
+        {
+            var contador = Time.deltaTime;
+            shieldPowerUpRemainingTime -= contador;
+            UpdatePowerUpIcon(_shieldIcon, shieldPowerUpRemainingTime, shieldPowerUpStartTime);
+            if (contador > 20)
             {
                 startIconCount = false;
             }
@@ -38,9 +59,9 @@ public class UIManager
         _HealthBar.fillAmount = health / startHealth;
     }
 
-    public void UpdatePowerUpIcon(float remaingTime, float startTime)
+    public void UpdatePowerUpIcon(Image icon, float remaingTime, float startTime)
     {
-        _tripleIcon.fillAmount = remaingTime / startTime;
+        icon.fillAmount = remaingTime / startTime;
         
     }
 

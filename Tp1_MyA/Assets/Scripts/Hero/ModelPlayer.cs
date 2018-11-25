@@ -34,10 +34,12 @@ public class ModelPlayer
         if (typeOfShoot == TypeOfShoot.TRIPLE)
         {
             typeOfShoot = TypeOfShoot.MISIL;
+            _player.NotifyObservers("StartMisilCount");
         }
         else if (typeOfShoot == TypeOfShoot.AUTOMATIC)
         {
             typeOfShoot = TypeOfShoot.TRIPLE;
+            _player.NotifyObservers("StartTripleCount");
         }
         else if (typeOfShoot == TypeOfShoot.MISIL)
         {
@@ -48,6 +50,7 @@ public class ModelPlayer
     public void PowerUpShield()
     {
         _shield.SetActive(true);
+        _player.NotifyObservers("StartShieldCount");
     }
 
 }
