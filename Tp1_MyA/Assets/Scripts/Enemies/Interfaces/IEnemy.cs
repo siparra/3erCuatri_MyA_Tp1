@@ -4,8 +4,6 @@ using UnityEngine;
 
 public interface IEnemy
 {
-
-
     //Para el Pool
     void Initialize();
     void Dispose();
