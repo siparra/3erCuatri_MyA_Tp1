@@ -84,7 +84,8 @@ public class Player : MonoBehaviour, IObservable
         {
             model.PowerUpGun();
             contador = 0;
-        }else if(collision.gameObject.tag == "PowerUpShield")
+        }
+        else if(collision.gameObject.tag == "PowerUpShield")
         {
             model.PowerUpShield();
         }else if(collision.gameObject.tag == "Enemy")
