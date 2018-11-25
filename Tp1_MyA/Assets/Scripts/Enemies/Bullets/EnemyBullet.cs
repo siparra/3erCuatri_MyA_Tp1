@@ -55,7 +55,7 @@ public class EnemyBullet : MonoBehaviour,IEnemyBullet {
 
     IEnumerator DestroyBullet(EnemyBullet bullet)
     {
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(3f);
         _bulletPool.ReturnBulletToPool(bullet);
     }
 
