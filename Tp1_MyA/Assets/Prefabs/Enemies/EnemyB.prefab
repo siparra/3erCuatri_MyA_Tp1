@@ -161,6 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pivot: {fileID: 4876824520651772}
   gun: {fileID: 4855439936435088}
+  observer: {fileID: 0}
 --- !u!114 &114157033870578348
 MonoBehaviour:
   m_ObjectHideFlags: 1

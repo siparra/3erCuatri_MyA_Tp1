@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyB : MonoBehaviour, IEnemy {
+public class EnemyB : MonoBehaviour, IEnemy, IObservable {
     private int _life;
     private float _speed;
 
@@ -24,11 +24,16 @@ public class EnemyB : MonoBehaviour, IEnemy {
 
     private EnemyBGenerator _enemyPool;
 
+    private List<IObserver> _allObservers = new List<IObserver>();
+    public GameManager observer;
+
     // Use this for initialization
     void Awake()
     {
+        observer = FindObjectOfType<GameManager>();
         canShoot = 0.3f;
         _bulletPool = GetComponent<EnemyBulletGenerator>();
+        _allObservers.Add(observer);
     }
 
     // Update is called once per frame
@@ -46,10 +51,6 @@ public class EnemyB : MonoBehaviour, IEnemy {
 
     public void Shoot()
     {
-
-
-
-
         _bulletPool.GetBullet(gun, 1);   //1 = Normal Bulltet Movement (CAMBIAR!)
     }
 
@@ -113,6 +114,7 @@ public class EnemyB : MonoBehaviour, IEnemy {
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        NotifyObservers("UpdateScore");
         _enemyPool.ReturnEnemyToPool(this);
     }
 
@@ -124,5 +126,25 @@ public class EnemyB : MonoBehaviour, IEnemy {
     public void SetStartPosition(Vector3 initialPosition)
     {
         _startPosition = initialPosition;
+    }
+
+    public void Subscribe(IObserver observer)
+    {
+        if (!_allObservers.Contains(observer))
+            _allObservers.Add(observer);
+    }
+
+    public void Unsubscribe(IObserver observer)
+    {
+        if (_allObservers.Contains(observer))
+            _allObservers.Remove(observer);
+    }
+
+    public void NotifyObservers(string action)
+    {
+        foreach (var observer in _allObservers)
+        {
+            observer.OnNotify(action);
+        }
     }
 }
