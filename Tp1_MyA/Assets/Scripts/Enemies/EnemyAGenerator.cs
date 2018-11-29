@@ -11,19 +11,24 @@ public class EnemyAGenerator : MonoBehaviour
     private static EnemyAGenerator _instance;
     public static EnemyAGenerator Instance { get { return _instance; } }
 
+    public float timer;
+
     private void Awake()
     {
         _instance = this;
         _enemyPool = new Pool<EnemyA>(amount, EnemyFactory, EnemyA.InitializeEnemy, EnemyA.DisposeEnemy, true);
+
+        timer = 1.5f;
     }
 	
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
+        if (timer < 0) { 
             var enemy =_enemyPool.GetObjectFromPool();
             enemy.SetEnemyPool(this);
             enemy.SetStartPosition(this.transform.position);
+            timer = 1.5f;
         }
+        timer -= Time.deltaTime;
     }
 
     //Factory de Enemies

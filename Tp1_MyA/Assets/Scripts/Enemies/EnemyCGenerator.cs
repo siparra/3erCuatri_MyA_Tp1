@@ -9,21 +9,25 @@ public class EnemyCGenerator : MonoBehaviour {
 
     private static EnemyCGenerator _instance;
     public static EnemyCGenerator Instance { get { return _instance; } }
+    public float timer;
 
     private void Awake()
     {
         _instance = this;
         _enemyPool = new Pool<EnemyC>(amount, EnemyFactory, EnemyC.InitializeEnemy, EnemyC.DisposeEnemy, true);
-    }
+        timer=7f;
+}
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (timer < 0)
         {
             var enemy = _enemyPool.GetObjectFromPool();
             enemy.SetEnemyPool(this);
             enemy.SetStartPosition(this.transform.position);
+            timer = 7f;
         }
+        timer -= Time.deltaTime;
     }
 
     //Factory de Enemies

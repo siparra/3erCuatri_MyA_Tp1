@@ -34,6 +34,9 @@ public class EnemyB : MonoBehaviour, IEnemy, IObservable {
         canShoot = 0.3f;
         _bulletPool = GetComponent<EnemyBulletGenerator>();
         _allObservers.Add(observer);
+        //Movement
+        strategyMovement_Normal = new NormalAdvance(_speed, this.transform);
+        strategyMovement_Sinuous = new SinuousAdvance(_speed, 10f, this.transform);
     }
 
     // Update is called once per frame
@@ -92,10 +95,7 @@ public class EnemyB : MonoBehaviour, IEnemy, IObservable {
         _life = 100;
         //_speed = 0.01f; //CAMBIAR a 0.01f cuando es Movimiento Sinuoso
         _speed = 1f;
-
-        //Movement
         strategyMovement_Normal = new NormalAdvance(_speed, this.transform);
-        strategyMovement_Sinuous = new SinuousAdvance(_speed, 10f, this.transform);
         //Strategy3
         _currentMovement = strategyMovement_Normal;
 
