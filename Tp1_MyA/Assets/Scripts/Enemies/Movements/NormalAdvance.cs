@@ -15,14 +15,15 @@ public class NormalAdvance : MonoBehaviour, IMovement {
 
     public void Advance()
     {
-        
         if(_transform.position.y < -2f)
         {
+            Debug.Log("Transform position.y UP: " + _transform.position.y);
             direction = Vector3.up;
         }
 
         if(_transform.position.y> 10)
         {
+            Debug.Log("Transform position.y DOWN: " + _transform.position.y);
             direction = Vector3.down;
         }
         _transform.position += direction * _speed * Time.deltaTime;
