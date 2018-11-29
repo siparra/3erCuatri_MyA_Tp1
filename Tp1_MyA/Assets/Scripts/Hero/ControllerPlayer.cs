@@ -30,7 +30,6 @@ public class ControllerPlayer : IController {
     public void Move()
     {
         var distance = _camara.transform.position - _player.transform.position;
-        Debug.Log("Distance: " + distance);
 
         if(distance.x > _boundX)
         {
