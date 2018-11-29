@@ -27,6 +27,9 @@ public class EnemyC : MonoBehaviour, IEnemy, IObservable {
     private EnemyCGenerator _enemyPool;
     private List<IObserver> _allObservers = new List<IObserver>();
     public GameManager observer;
+    public GameObject explosion;
+    public List<GameObject> posiblesPowerUPS;
+    public List<float> weights;
 
 
     // Use this for initialization
@@ -123,6 +126,8 @@ public class EnemyC : MonoBehaviour, IEnemy, IObservable {
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        Instantiate(explosion, this.transform.position, this.transform.rotation);
+        Instantiate(RouletteWheelSelection.GetRandomByWeight(posiblesPowerUPS, weights), this.transform.position, this.transform.rotation);
         StartCoroutine(DestroyHeroBulletOnCollision(1f));
     }
 

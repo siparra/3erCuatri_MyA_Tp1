@@ -252,6 +252,16 @@ MonoBehaviour:
   - {fileID: 4228515692194530}
   - {fileID: 4931620710915154}
   - {fileID: 4551708310154636}
+  observer: {fileID: 0}
+  explosion: {fileID: 1860515778116384, guid: 6465b75da82e5e34a90c30a7be58d3b5, type: 2}
+  posiblesPowerUPS:
+  - {fileID: 1793304387213616, guid: cda3f589f23eed3418ba539b06267302, type: 2}
+  - {fileID: 1042146885847044, guid: 1ec67d830cd160f449dda7b7d60cdfa6, type: 2}
+  - {fileID: 1854449726330910, guid: 7f75b87c52bae4a4faf92f8cf772c381, type: 2}
+  weights:
+  - 75
+  - 15
+  - 10
 --- !u!114 &114685158535820092
 MonoBehaviour:
   m_ObjectHideFlags: 1

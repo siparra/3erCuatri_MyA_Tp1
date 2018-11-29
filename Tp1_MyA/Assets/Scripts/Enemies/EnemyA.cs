@@ -24,6 +24,10 @@ public class EnemyA : MonoBehaviour, IEnemy, IObservable {
     private EnemyAGenerator _enemyPool;
 
     private List<IObserver> _allObservers = new List<IObserver>();
+    public GameObject explosion;
+    public List<GameObject> posiblesPowerUPS;
+    public List<float> weights;
+
 
     // Use this for initialization
     void Awake () {
@@ -110,7 +114,10 @@ public class EnemyA : MonoBehaviour, IEnemy, IObservable {
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        
         NotifyObservers("UpdateScore");
+        Instantiate(RouletteWheelSelection.GetRandomByWeight(posiblesPowerUPS, weights), this.transform.position, this.transform.rotation);
+        Instantiate(explosion, this.transform.position, this.transform.rotation);
         _enemyPool.ReturnEnemyToPool(this);
     }
 

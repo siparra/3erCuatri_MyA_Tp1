@@ -26,6 +26,9 @@ public class EnemyB : MonoBehaviour, IEnemy, IObservable {
 
     private List<IObserver> _allObservers = new List<IObserver>();
     public GameManager observer;
+    public GameObject explosion;
+    public List<GameObject> posiblesPowerUPS;
+    public List<float> weights;
 
     // Use this for initialization
     void Awake()
@@ -115,6 +118,8 @@ public class EnemyB : MonoBehaviour, IEnemy, IObservable {
     public void OnCollisionEnter2D(Collision2D collision)
     {
         NotifyObservers("UpdateScore");
+        Instantiate(RouletteWheelSelection.GetRandomByWeight(posiblesPowerUPS, weights), this.transform.position, this.transform.rotation);
+        Instantiate(explosion, this.transform.position, this.transform.rotation);
         _enemyPool.ReturnEnemyToPool(this);
     }
 
