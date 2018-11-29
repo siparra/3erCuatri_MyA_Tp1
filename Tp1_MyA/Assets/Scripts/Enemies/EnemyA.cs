@@ -5,8 +5,10 @@ using UnityEngine;
 public class EnemyA : MonoBehaviour, IEnemy, IObservable {
 
     private int _life;
-    private float _speed;
-    
+    private float _speed=3f;
+    public List<GameObject> posiblesPowerUPS;
+    public List<float> weights;
+
     //Movement Strategy
     private IMovement _currentMovement;
     private IMovement strategyMovement_Normal;
@@ -22,6 +24,8 @@ public class EnemyA : MonoBehaviour, IEnemy, IObservable {
     private Vector3 _startPosition = new Vector3(0,12.6f,0);
 
     private EnemyAGenerator _enemyPool;
+    public GameObject bigExplotion;
+
 
     private List<IObserver> _allObservers = new List<IObserver>();
 
@@ -88,10 +92,9 @@ public class EnemyA : MonoBehaviour, IEnemy, IObservable {
         _life = 100;
         //_speed = 0.01f; //CAMBIAR a 0.01f cuando es Movimiento Sinuoso
         _speed = 1f;
-        
         //Movement
         strategyMovement_Normal = new NormalAdvance(_speed, this.transform);
-        strategyMovement_Sinuous = new SinuousAdvance(_speed,10f, this.transform);
+        strategyMovement_Sinuous = new SinuousAdvance(_speed, 10f, this.transform);
         //Strategy3
         _currentMovement = strategyMovement_Sinuous;
         
@@ -111,6 +114,8 @@ public class EnemyA : MonoBehaviour, IEnemy, IObservable {
     public void OnCollisionEnter2D(Collision2D collision)
     {
         NotifyObservers("UpdateScore");
+        Instantiate(RouletteWheelSelection.GetRandomByWeight(posiblesPowerUPS, weights), this.transform.position, this.transform.rotation);
+        Instantiate(bigExplotion, this.transform.position, this.transform.rotation);
         _enemyPool.ReturnEnemyToPool(this);
     }
 

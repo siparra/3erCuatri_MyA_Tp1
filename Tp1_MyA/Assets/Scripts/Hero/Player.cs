@@ -29,6 +29,10 @@ public class Player : MonoBehaviour, IObservable
     public float fireRate;
     public float contador;
 
+    public AudioSource soundSource;
+    public AudioClip normalShootSound;
+    public AudioClip misilSound;
+
     public void Awake()
     {
 
