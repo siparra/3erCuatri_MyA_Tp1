@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyB : MonoBehaviour, IEnemy {
-    private int _life;
-    private float _speed;
+    public int _life;
+    public float _speed=3f;
 
     //Movement Strategy
-    private IMovement _currentMovement;
+    public IMovement _currentMovement;
     private IMovement strategyMovement_Normal;
     private IMovement strategyMovement_Sinuous;
     private IMovement strategyMovement_Target;
 
+    public List<GameObject> posiblesPowerUPS;
+    public List<float> weights;
 
     //Shoot
     public Transform pivot;
@@ -24,11 +26,17 @@ public class EnemyB : MonoBehaviour, IEnemy {
 
     private EnemyBGenerator _enemyPool;
 
+    public GameObject bigExplotion;
+
     // Use this for initialization
     void Awake()
     {
         canShoot = 0.3f;
+        _speed = 3f;
         _bulletPool = GetComponent<EnemyBulletGenerator>();
+        //Movement
+        strategyMovement_Normal = new NormalAdvance(_speed, this.transform);
+        strategyMovement_Sinuous = new SinuousAdvance(_speed, 10f, this.transform);
     }
 
     // Update is called once per frame
@@ -82,22 +90,20 @@ public class EnemyB : MonoBehaviour, IEnemy {
     public void Dispose()
     {
         _life = 100;
+        _speed = 3f;
         this.transform.position = _startPosition;
+        _currentMovement = strategyMovement_Normal;
     }
 
     public void Initialize()
     {
-
+        Debug.Log("Genero un enemyB!");
         _life = 100;
-        //_speed = 0.01f; //CAMBIAR a 0.01f cuando es Movimiento Sinuoso
-        _speed = 1f;
-
-        //Movement
-        strategyMovement_Normal = new NormalAdvance(_speed, this.transform);
-        strategyMovement_Sinuous = new SinuousAdvance(_speed, 10f, this.transform);
+        _speed = 3f;
+        
         //Strategy3
+        Debug.Log("Asigno el current movement");
         _currentMovement = strategyMovement_Normal;
-
     }
 
     public static void InitializeEnemy(EnemyB enemy)
@@ -113,6 +119,8 @@ public class EnemyB : MonoBehaviour, IEnemy {
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        Instantiate(RouletteWheelSelection.GetRandomByWeight(posiblesPowerUPS, weights), this.transform.position, this.transform.rotation);
+        Instantiate(bigExplotion, this.transform.position, this.transform.rotation);
         _enemyPool.ReturnEnemyToPool(this);
     }
 

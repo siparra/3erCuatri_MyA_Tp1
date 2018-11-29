@@ -28,6 +28,11 @@ TextureImporter:
     21300046: Enemy3
     21300048: MisilIcon
     21300050: ShieldIcon
+    21300052: Big_Explosion_0
+    21300054: Big_Explosion_1
+    21300056: Big_Explosion_2
+    21300058: Big_Explosion_3
+    21300060: Big_Explosion_4
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -598,13 +603,113 @@ TextureImporter:
         width: 22
         height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 25515c51c74f20746adee5642b1612f7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Big_Explosion_0
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 625
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5c785c0fa4e66c43903b82fa4a27a87
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Big_Explosion_1
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 621
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f9672c4f2df59549a82354240edf2d2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Big_Explosion_2
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 620
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7411b3394ee37954887bd76d9af18c1f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Big_Explosion_3
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 622
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ea074f8f596d1b4f94cee1aefd103b3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Big_Explosion_4
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 624
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c65c1ffb4f6726749ab4ec3052a6fa18
       vertices: []
       indices: 
       edges: []

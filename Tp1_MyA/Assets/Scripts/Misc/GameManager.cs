@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour, IObserver
 
     public void LooseGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
         heroLife = 100;
     }
 }

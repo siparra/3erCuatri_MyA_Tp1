@@ -246,12 +246,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c3ad8d61842f3418464ce233b7d7d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  posiblesPowerUPS:
+  - {fileID: 1042146885847044, guid: 1ec67d830cd160f449dda7b7d60cdfa6, type: 2}
+  - {fileID: 1854449726330910, guid: 7f75b87c52bae4a4faf92f8cf772c381, type: 2}
+  - {fileID: 1867918795647850, guid: 97599a2995b0366419aa7d968bd5dc71, type: 2}
+  weights:
+  - 20
+  - 10
+  - 70
   pivot: {fileID: 4399638568245112}
   guns:
   - {fileID: 4594335952526734}
   - {fileID: 4228515692194530}
   - {fileID: 4931620710915154}
   - {fileID: 4551708310154636}
+  bigExplotion: {fileID: 1501470905668208, guid: d9feb574c72c24f458f8dbcf89470653,
+    type: 2}
 --- !u!114 &114685158535820092
 MonoBehaviour:
   m_ObjectHideFlags: 1
