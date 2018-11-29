@@ -14,6 +14,7 @@ public class Player : MonoBehaviour, IObservable
     public Transform misilGunR;
     public ModelPlayer model;
     public GameObject shield;
+    public Transform camara;
 
     public NormalBulletGenerator bulletPool;
     public MisilBulletGenerator misilPool;
@@ -40,7 +41,7 @@ public class Player : MonoBehaviour, IObservable
 
         view = new ViewPlayer();
         model = new ModelPlayer(this.transform, shield);
-        controller = new ControllerPlayer(model, view, this);
+        controller = new ControllerPlayer(model, view, this, camara);
         automaticStrategy = new Automatic(canShot, fireRate, bullet, mainGun, bulletPool);
         tripleStrategy = new Triple(canShot, fireRate, bullet, mainGun, sideGunL, sideGunR, bulletPool);
         misilStrategy = new Misil(canShot, fireRate, bullet, mainGun, sideGunL, sideGunR, bulletPool, misilGunL, misilGunR, misilPool);

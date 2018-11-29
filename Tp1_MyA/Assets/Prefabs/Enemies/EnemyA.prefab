@@ -153,6 +153,7 @@ MonoBehaviour:
   gun: {fileID: 4412831085099326}
   bigExplotion: {fileID: 1501470905668208, guid: d9feb574c72c24f458f8dbcf89470653,
     type: 2}
+  observer: {fileID: 0}
 --- !u!212 &212216041033013154
 SpriteRenderer:
   m_ObjectHideFlags: 1
