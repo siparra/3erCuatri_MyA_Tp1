@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 4412831085099326}
+  observer: {fileID: 0}
 --- !u!212 &212216041033013154
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -19,6 +19,10 @@ public class GameManager : MonoBehaviour, IObserver
     public Image misilIcon;
     public Image shieldIcon;
 
+    public Text highScore;
+    public Text score;
+    public int actualScore = 0;
+
     public GameObject menu;
 
     public bool startIconCount;
@@ -32,6 +36,10 @@ public class GameManager : MonoBehaviour, IObserver
         _hero.Subscribe(this);
         heroLife = 100;
         Time.timeScale = 0;
+
+        SetScore(0);
+
+        highScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
 	}
 	
 	
@@ -80,6 +88,9 @@ public class GameManager : MonoBehaviour, IObserver
                 uiManager.shieldPowerUpRemainingTime = 20;
                 uiManager.shieldPowerUpStartTime = 20;
                 break;
+            case "UpdateScore":
+                SetScore(10);
+                break;
             default:
                 break;
         }
@@ -102,6 +113,18 @@ public class GameManager : MonoBehaviour, IObserver
     {
         SceneManager.LoadScene(1);
         heroLife = 100;
+    }
+
+    public void SetScore(int points)
+    {
+        actualScore += points;
+        score.text = actualScore.ToString();
+
+        if(actualScore > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            PlayerPrefs.SetInt("HighScore", actualScore);
+            highScore.text = actualScore.ToString();
+        }
     }
 }
 
